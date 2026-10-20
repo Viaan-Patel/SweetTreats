@@ -1,0 +1,119 @@
+<html>
+<head>
+<title>Session 25</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</head>
+<body onload="displaycards()">
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Sweet Treats</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Menu</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Cart</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- image overlay starts -->
+
+<div class="card text-bg-dark">
+  <img src="https://thumbs.dreamstime.com/b/incredibly-beautiful-sunset-sun-lake-sunrise-landscape-panorama-nature-sky-amazing-colorful-clouds-fantasy-design-115177001.jpg" class="card-img" alt="" style="height:350px; object-fit:cover;">
+  <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center">
+    <h1 class="card-title">Welcome to Sweet Treats</h1>
+    <p class="card-text">Your destination to Desserts and Beverages</p>
+  </div>
+</div>
+
+<!-- card container -->
+<div class="container my-5">
+<div class="row" id="itemcontainer"></div>
+</div>
+
+<!-- footer starts -->
+<footer class="bg-dark p-3 text-white">
+<div class="container text-center">
+<h2>Our Products</h2>
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://api.photon.aremedia.net.au/wp-content/uploads/sites/4/2025/11/recipe-maggie-beer-passionfruit-curd-sponge-cake-69128a92788cc.jpg?fit=900%2C900&format=auto" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJXsBvylZJ8SJwBZmw4y36lwXM8X65UbiWiUM8w7npASEb-iVRZf2rIwX5&s=10" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPLUYXyD7RetP88QVKDNbvIAVuUeNhnukGlgyyaYxseX72mjDAn1Ep28gc&s=10" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</footer>
+
+<script>
+let items = [
+    {
+        name:"Ice-Cream",
+        price: 3.99, 
+        description: "Melting and icy are flavours and the taste is awsome",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmctzKkGKKgOtONrzC1ezxdfPxiXGDO76Hz-dLCVPo_eA2MaKBbQLFInc&s=10"
+    },
+
+    {
+        name:"Cake",
+        price: 11.99, 
+        description: "Includes fruits and protein flavours, have your pick.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRoTgcH90Lcml74g74nLhfaBVPR386Cs8OWSWXrZMPysQYb8tOjC-IiNIe&s=10"
+    },
+
+    {
+        name:"Milkshake",
+        price: 6.99, 
+        description: "Wide range of flavours to choose from and sweet and tangy.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTawciLRX1W47c7b9Nt-DPh1nHf3nBEV9ipYECjwGXRwEPhm6oW2AYyj6tu&s=10"
+    },
+]
+
+function displaycards(){
+    let cardcontainer =  document.getElementById("itemcontainer");
+    cardcontainer.innerHTML = "";
+
+    for(let i = 0; i < items.length; i++){
+    cardcontainer.innerHTML += `
+<div class="col-md-4">
+<div class="card shadow">
+<img alt="" class="card-img-top" src="${items[i].image}">
+<div class="card-body">
+<h3>${items[i].name}</h3>
+<p>${items[i].description}</p>
+<p><b>Price: </b>$${items[i].price}</p>
+</div>
+</div>
+</div>
+    `;
+    }
+}
+
+</script>
+</body>
+</html>
